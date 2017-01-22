@@ -76,4 +76,6 @@ public class UserDao extends AbstractDao {
         }
         return null;
     }
+//написать джоин
+
 }

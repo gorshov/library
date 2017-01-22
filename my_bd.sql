@@ -89,8 +89,8 @@ CREATE TABLE IF NOT EXISTS `library`.`Review` (
   `id_Review` INT NOT NULL AUTO_INCREMENT,
   `id_User` INT NOT NULL,
   `id_Film` INT NOT NULL,
-  `Text` TEXT NULL,
-  `Mark` DOUBLE NULL,
+  `Text` TEXT NOT NULL,
+  `Mark` DOUBLE NOT NULL,
   PRIMARY KEY (`id_Review`),
   INDEX `id_Film` (`id_Film` ASC),
   INDEX `id_User` (`id_User` ASC),
@@ -147,5 +147,6 @@ INSERT INTO `library`.`films_stars` (`id_Film`, `id_Stars`) VALUES ('9', '9');
 INSERT INTO `library`.`films_stars` (`id_Film`, `id_Stars`) VALUES ('10', '10');
 INSERT INTO `library`.`films_stars` (`id_Film`, `id_Stars`) VALUES ('10', '11');
 
-
+INSERT INTO `library`.`library`.`User` (`First_Name`, `Midle_Name`, `Last_name`,`Passwords`,`Email`,`Role`) VALUES ('Admin', 'Admin', 'Admin','12345','Admin');
+INSERT INTO `library`.`library`.`User` (`First_Name`, `Midle_Name`, `Last_name`,`Passwords`,`Email`,`Role`) VALUES ('User', 'User', 'User','12345','User');
 

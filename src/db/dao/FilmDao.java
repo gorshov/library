@@ -1,16 +1,13 @@
 package db.dao;
 
 import db.connection.DbConnection;
-import db.dao.AbstractDao;
 import db.essence.Film;
 import db.essence.Ganre;
 import db.essence.Star;
 
 import java.sql.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Formatter;
-import java.util.List;
+
 
 public class FilmDao extends AbstractDao<Film> {
     private static final String addFilm = "INSERT INTO film (Title, Ganre, Release_Date, Country) VALUES(?, ?, ?, ?)";
@@ -54,7 +51,7 @@ public class FilmDao extends AbstractDao<Film> {
         }
         return film;
     }
-
+    //вынести в абстракт
     @Override
     public Film deleteByName(String name) {
         try {

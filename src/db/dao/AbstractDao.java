@@ -56,4 +56,16 @@ public abstract class AbstractDao<T extends DaoId> {
 
         return statement;
     }
+
+    protected Statement getForDelete(String nameTable, String nameId, String name) {
+        Connection connection = DbConnection.getConnectionDb();
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(String.format(forDelete, nameTable, nameId, name));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
 }
